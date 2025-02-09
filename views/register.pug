@@ -1,0 +1,35 @@
+extends main
+
+block content
+  h1 Register
+  form(action="/register" method="POST")
+    .form-group
+      div
+        label(for="firstName") First name:
+        input(type="text" name="firstName" id="firstName" value=data ? data.firstName : "" required)
+        if errors && errors.firstName
+          .field-error= errors.firstName
+      div
+        label(for="lastName") Last name:
+        input(type="text" name="lastName" id="lastName" value=data ? data.lastName : "" required)
+        if errors && errors.lastName
+          .field-error= errors.lastName
+      div
+        label(for="email") Email:
+        input(type="email" name="email" id="email" value=data ? data.email : "" required)
+        if errors && errors.email
+          .field-error= errors.email
+      div
+        label(for="password") Password:
+        input(type="password" name="password" id="password" required)
+        if errors && errors.password
+          .field-error= errors.password
+      div
+        label(for="confirmPassword") Confirm password:
+        input(type="password" name="confirmPassword" id="confirmPassword" required)
+        if errors && errors.confirmPassword
+          .field-error= errors.confirmPassword
+      div
+        button(type="submit") Submit
+      div
+        a(href="/login") You already have an account? Log in

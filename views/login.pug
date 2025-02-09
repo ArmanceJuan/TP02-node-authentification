@@ -1,0 +1,18 @@
+extends main
+
+block content
+  h1 Login
+  if error
+    .error= error
+  form(action="/login" method="POST")
+    .form-group
+      div
+        label(for="email") Email:
+        input(type="email" name="email" id="email")
+      div
+        label(for="password") Password:
+        input(type="password" name="password" id="password")
+      div
+        button(type="submit") Submit
+      div
+        a(href="/register") You don't have an account? Register

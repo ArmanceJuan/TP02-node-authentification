@@ -1,0 +1,8 @@
+extends main 
+
+block content
+  .dashboard
+    h1 Dashboard
+    p Welcome #{user.firstName}
+    form(action="/logout" method="POST")
+      button(type="submit") Logout
